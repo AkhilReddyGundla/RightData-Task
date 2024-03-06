@@ -1,8 +1,56 @@
-# React + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# Project Title Task
 
-Currently, two official plugins are available:
+A simple frontend project to showcase my skills
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+
+
+# Getting Started
+To get a local copy up and running, please follow these simple steps.
+
+## Prerequisites
+Here is what you need to be able to run project  
++ Node.js
+## Development 
+### Setup
+1. Clone the repo into a public GitHub repository (or fork https://github.com/AkhilReddyGundla/RightData-task).
+
+2. Install Packages with npm
+``` npm install ```
+
+3. Run (in development mode)
+``` npm run dev``` 
+## API Reference
+
+#### Get all Users 
+
+```http
+  GET https://reqres.in/api/users?page=2
+```
+
+| Parameter | Type     | Description                |
+| :-------- | :------- | :------------------------- |
+| `page=2` | `number` | **Required**. Your API key |
+
+#### Get Single User
+
+```http
+  GET /api/users/${userId}
+```
+
+| Parameter | Type     | Description                       |
+| :-------- | :------- | :-------------------------------- |
+| `id`      | `number` | **Required**. Id of user to fetch |
+
+#### User Registration
+
+```http
+  POST /api/register
+```
+
+#### User Login
+
+```http
+    POST /api/login
+```
+
