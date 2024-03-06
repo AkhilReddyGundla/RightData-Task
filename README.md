@@ -19,7 +19,9 @@ Here is what you need to be able to run project
 ``` npm install ```
 
 3. Run (in development mode)
-``` npm run dev``` 
+``` npm run dev```
+
+Temporarily use the email as "eve.holt@reqres.in" and the password as "pistol".
 ## API Reference
 
 #### Get all Users 
@@ -53,4 +55,4 @@ Here is what you need to be able to run project
 ```http
     POST /api/login
 ```
-
+# To view LIVE WEBSITE https://right-data-task.vercel.app/
