@@ -56,3 +56,4 @@ Temporarily use the email as "eve.holt@reqres.in" and the password as "pistol".
     POST /api/login
 ```
 # To view LIVE WEBSITE https://right-data-task.vercel.app/
+#### Use desktop mode for small screen sizes
