@@ -3,7 +3,7 @@ import authReducer from './slices/authSlice';
 import userIdReducer from './slices/userIdSlice'
 import gridInfoReducer from "./slices/userGrigInfo";
 
-
+//combining all reducers.
 const rootReducer = combineReducers({
     auth : authReducer,    // slice of the state :  reducer function responsible for managing that slice of state
     userId : userIdReducer,

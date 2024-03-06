@@ -4,7 +4,6 @@ import {Typography,Box, Container,Button} from '@mui/material'
 export default function UserDetails({userInformation,closeWindow}){
     return (
         <>
-            
                 <Container sx={{background:"#e3f2fd", width: '40%', minWidth: '200px', marginLeft:"auto", marginRight:"auto",borderRadius:"10px", padding:"20px"}}>
 
                     <Button onClick={()=>closeWindow(false)} sx={{ fontWeight: 'bold', position:"end" }}>Back</Button>
@@ -20,7 +19,6 @@ export default function UserDetails({userInformation,closeWindow}){
                     </Box>
                 </Container>
                 
-
         </>
     )
 }

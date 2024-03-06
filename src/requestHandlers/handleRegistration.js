@@ -15,6 +15,6 @@ export default async function handleUserRegistration(email,password){
         
     }catch(error){
         console.log(error)
-        return -1;
+        return -1;  // to indicate error
     }
 }

@@ -1,9 +1,10 @@
 // Dashboard.js
 import React, { lazy,Suspense } from 'react';
 import UsersGrid from './DashBoardComponents/UsersGrid';
-const UserGrid = lazy(()=>{'./DashBoardComponents/UsersGrid'})
 import { Box, Typography } from '@mui/material';
 import LoadingComponent from './LoadingComponent';
+
+const UserGrid = lazy(()=>{'./DashBoardComponents/UsersGrid'}) 
 
 const Dashboard = () => {
     return (

@@ -1,5 +1,6 @@
 import { Box, Button, TextField, Typography } from "@mui/material";
 import handleRegistration from "../requestHandlers/handleRegistration";
+
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
@@ -10,15 +11,10 @@ export default function Register(){
 
     const navigate = useNavigate()
 
-
     const handleUserRegistration = async(e)=>{
-        e.preventDefault();
-        const result = await handleRegistration(email,password);
-        if(result>0){
-            navigate("/login")
-        }else{
-            alert("Something wrong with your details")
-        }
+        e.preventDefault(); // to prevent this default behavior to handle the form submission in JavaScript code without causing a full page reload.
+        const result = await handleRegistration(email,password); // to await is used to resolve promise
+        result > 0 ?  navigate("/login") : alert("Something wrong with your details")
     }
 
 

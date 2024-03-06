@@ -14,8 +14,11 @@ export default function UserGrid() {
 
     const token = useSelector((state) => state.auth.token);
     const id = useSelector((state) => state.userId.id);
+
     let currentPage = useSelector((state) => state.gridInfo.currentPage);
-    const [rowData, setRowData] = useState([]);
+
+    const [rowData, setRowData] = useState([]); 
+
     const [viewButtonOnClick, setViewButtOnClick] = useState(false);
     const [selectedRowData,setSelectedRowData] = useState();
     
@@ -27,6 +30,8 @@ export default function UserGrid() {
 
 
   const dispatch = useDispatch()
+
+  // fetching data
     const fetchData = (pageNumber) => {
         const url = `https://reqres.in/api/users?page=${pageNumber}`;
         const headers = { token, id };
@@ -35,7 +40,7 @@ export default function UserGrid() {
                 .then((response) => {
                     setRowData(response.data.data);
                     dispatch(setCurrentPage(response.data.page))
-                    localStorage.setItem('TotalGridPages',null)
+                    localStorage.setItem('TotalGridPages',null)// using local storage to store Total pages
                     localStorage.setItem("TotalGridPages",response.data.total_pages)
                 })
                 .catch((error) => {
@@ -46,7 +51,7 @@ export default function UserGrid() {
         }
     };
 
-    
+    // defining Columns of grid
     const columnDefs = useMemo(() => [
         { headerName: "Id", field: "id" },
         { headerName: "First Name", field: "first_name" },
@@ -63,12 +68,13 @@ export default function UserGrid() {
         }
     ], []);
   
-
+// Handling View Button 
     const handleViewBtn = (data)=>{
         setSelectedRowData(data)
         setViewButtOnClick(true)
     }
 
+// handling Delete Button
     const handleDeleteBtn = async(id)=>{
         const confirm = window.confirm(`Are you sure, you want to delete this user ${id}`)
         if(confirm){
@@ -83,6 +89,8 @@ export default function UserGrid() {
         }
     }
 
+
+    // default coloum definations 
     const defaultColDef = useMemo(() => ({
         filter: true,
         sortable: true,
@@ -93,10 +101,15 @@ export default function UserGrid() {
     }), []);
 
 
+    
     if (viewButtonOnClick) {
         const userInformation = selectedRowData;
         return <UserDetails userInformation ={userInformation} closeWindow={setViewButtOnClick}/>;
     }
+
+
+
+
     return (
         <Box className="ag-theme-quartz">
             <AgGridReact

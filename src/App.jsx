@@ -7,7 +7,7 @@ import { Suspense, lazy } from "react"
 import LoadingComponent from "./components/LoadingComponent";
 
 
-//lazy loading
+//lazy loading  : Lazily loading components helps avoid loading the entire application upfront, allowing only the required components to be loaded when needed.
 
 const Register = lazy(()=>import ('./components/Register'))
 const Login = lazy(()=>import ('./components/Login'))

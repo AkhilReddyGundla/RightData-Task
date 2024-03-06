@@ -7,11 +7,13 @@ import { useDispatch } from 'react-redux';
 export default function Login(){
     const navigate = useNavigate()
     const dispatch = useDispatch();
+
     const [email,setEmail] = useState("");
     const [password,setPassword] = useState("")
 
+    //handling userRequest
     const handleUserLogin =async (e)=>{
-        e.preventDefault();
+        e.preventDefault();   // to prevent this default behavior to handle the form submission in JavaScript code without causing a full page reload.
         const result = await handleLogin(email,password,dispatch)
         result ? navigate("/Dashboard") : alert("Something wrong with your details")
     }

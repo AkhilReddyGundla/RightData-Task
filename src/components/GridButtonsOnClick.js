@@ -1,7 +1,7 @@
 import { setCurrentPage } from '../redux/slices/userGrigInfo';
 
 
-
+// currentPage !== (undefined || null)   This check ensures that non-serializable data is not stored in the state.
 
 export const PrevButtonOnPress = (dispatch,currentPage) =>{
 

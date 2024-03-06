@@ -13,8 +13,12 @@ export default function Header() {
         handleLogoutRequest(dispatch);
     }
 
+
+    // Check if the user is logged in to determine authentication status
     const isLogin = useSelector((state) => state.auth.isAuthenticated)
     const [value, setValue] = useState(0);
+
+
 
     const tabsBeforeDashBoard =
         <Tabs onChange={(e, val) => setValue(val)} textColor='inherit' value={value}>
