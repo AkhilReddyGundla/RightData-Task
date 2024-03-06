@@ -1,16 +1,35 @@
 
-# Getting Started
-To get a local copy up and running, please follow these simple steps.
+## API Reference
 
-## Prerequisites
-Here is what you need to be able to run project  
-+ Node.js
-## Development 
-### Setup
-1. Clone the repo into a public GitHub repository (or fork https://github.com/AkhilReddyGundla/RightData-task).
+#### Get all Users 
 
-2. Install Packages with npm
-``` npm install ```
+```http
+  GET https://reqres.in/api/users?page=2
+```
 
-3. Run (in development mode)
-``` npm run dev``` 
+| Parameter | Type     | Description                |
+| :-------- | :------- | :------------------------- |
+| `page=2` | `number` | **Required**. Your API key |
+
+#### Get Single User
+
+```http
+  GET /api/users/${userId}
+```
+
+| Parameter | Type     | Description                       |
+| :-------- | :------- | :-------------------------------- |
+| `id`      | `number` | **Required**. Id of user to fetch |
+
+#### User Registration
+
+```http
+  POST /api/register
+```
+
+#### User Login
+
+```http
+    POST /api/login
+```
+
